@@ -1,0 +1,166 @@
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(./assets/Barlow_Semi_Condensed/BarlowSemiCondensed-Medium.ttf);
+    font-display: swap;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url(./assets/Barlow_Semi_Condensed/BarlowSemiCondensed-SemiBold.ttf);
+    font-display: swap;
+    font-weight: 600;
+}
+
+
+:root{
+    /* colors */
+    --Purple-50: hsl(260, 100%, 95%);
+    --Purple-300: hsl(264, 82%, 80%);
+    --Purple-500: hsl(263, 55%, 52%);
+
+    --White: hsl(0, 0%, 100%);
+    --Grey-100: hsl(214, 17%, 92%);
+    --Grey-200: hsl(0, 0%, 81%);
+    --Grey-400: hsl(224, 10%, 45%);
+    --Grey-500: hsl(217, 19%, 35%);
+    --Dark-blue: hsl(219, 29%, 14%);
+    --Black: hsl(0, 0%, 7%);
+
+    /* headings */
+    --text: "Barlow Semi Condensed", Sans-serif;
+    --text-size: 13px;
+    --bold: 600;
+    --medium: 500;
+
+}
+
+
+            /*----- Mobile Design First 375px and  < less than ------*/
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    font-family: var(--text);
+    font-size: var(--text-size);
+}
+
+/* whole frame design */
+.testimonial-grid{
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* place-items: center; */
+    gap: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    padding: 2.5rem;
+    
+}
+
+/* Individual testimonies design */
+article{
+    /* width: min(283px, 100%); */
+    padding: 1.875rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+
+/* Testifiers detials */
+
+.testifiers-details{
+    margin-block-end: 0.9rem;
+    display: flex;
+    gap: 10px;
+}
+
+.testifiers-details img{
+    display: block;
+    border-radius: 50%;
+    width: 1.9rem;
+}
+
+.testifiers-details span{
+    display: block;
+}
+
+.testifiers-details .testifiers-name{
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    font-weight: 600;
+}
+
+.testifiers-details .testifiers-graduate-status, article p{
+    font-size: clamp(0.725rem, 1vw, 0.675rem);
+    font-weight: lighter;
+}
+
+/* Article headings */
+article h2{
+    font-family: var(--text);
+    font-size: 1.175rem;
+    font-weight: 600;
+    margin-block-end: 1rem;
+}
+
+/* individual testimony design */
+
+.testimonial-grid article:nth-child(1){
+    background-color: var(--Purple-500);
+    color: var(--White);
+}
+
+.testimonial-grid article:nth-child(2){
+    background-color: var(--Grey-500);
+    color: var(--White);
+}
+
+.testimonial-grid article:nth-child(4){
+    background-color: var(--Dark-blue);
+    color: var(--White);
+}
+
+/* Now for larger Screen design */
+
+@media (min-width: 900px) {
+    .testimonial-grid{
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-areas: 
+        "one one two five"
+        "three four four five";
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    .testimonial-grid article:nth-child(1){
+        grid-area: one;
+    }
+
+    .testimonial-grid article:nth-child(2){
+        grid-area: two;
+    }
+
+    .testimonial-grid article:nth-child(3){
+        grid-area: three;
+    }
+
+    .testimonial-grid article:nth-child(4){
+        grid-area: four;
+    }
+
+    .testimonial-grid article:nth-child(5){
+        grid-area: five;
+        place-items: stretch;
+    }
+
+    article p{
+        font-size: 0.875rem;
+    }
+
+
+}
